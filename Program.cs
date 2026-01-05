@@ -1,7 +1,10 @@
+using PersonalJournalApp.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<JournalEntryService>();
 
 var app = builder.Build();
 

@@ -1,0 +1,36 @@
+﻿@page
+@model PersonalJournalApp.Pages.Entries.IndexModel
+
+@{
+}
+
+
+<h1>Journal Entries <button type="button" class="btn btn-dark">+</button></h1><br>
+
+<table class="table">
+  <thead>
+    <tr>
+      	<th scope="col">#</th>
+      	<th scope="col">Title</th>
+      	<th scope="col">Date</th>
+      	<th scope="col">IsFavorite</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      	<th scope="row">@Model.entries.Id</th>
+      	<td>@Model.entries.Title</td>
+      	<td>@Model.entries.Date</td>
+      	<td>@Model.entries.IsFavorite</td>
+    </tr>
+    <tr>
+		<td>
+			<a asp-page="/Privacy" type="button" class="btn btn-secondary">Details</a>
+			<a type="button" class="btn btn-info">Edit</a>
+			<a type="button" class="btn btn-danger">Delete</a>
+			
+		</td>
+    </tr>
+  </tbody>
+</table>
