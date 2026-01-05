@@ -39,7 +39,7 @@
 		
 	</div>
 	
-	<input asp-for="moodTags" type="hidden" name="Tags" id="hiddenTags" />
+	<input asp-for="tags" type="hidden" name="Tags" id="hiddenTags" />
 
 	<div class="form-check">
 	  <input type="checkbox" asp-for="entry.IsFavorite" class="form-check-input">
@@ -47,8 +47,11 @@
 	  </label>
 	</div>
 
-	<button type="submit" class="btn btn-secondary" style="float: right;">Submit</button>
-	
+	<!-- Submit and Back Buttons-->
+	<div class="d-flex flex-row-reverse">
+		<button type="submit" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+		<a asp-page="/Entries/Index" class="me-2 btn btn-secondary btn-lg btn-block">Back</a>
+	</div>
 </form>
 
 

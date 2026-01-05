@@ -4,7 +4,7 @@ namespace PersonalJournalApp.Data
 {
 	public class JournalEntryService
 	{
-		public List<JournalEntry> entries = new List<JournalEntry>{
+		private List<JournalEntry> entries = new List<JournalEntry>{
 			new JournalEntry{
 				Id = 1,
 				Title = "hello world",
@@ -15,6 +15,11 @@ namespace PersonalJournalApp.Data
 				IsFavorite = true
 			}
 		};
+
+		public List<JournalEntry> GetAllEntries()
+		{
+			return entries;
+		}
 
 		public void AddEntry(JournalEntry entry)
 		{

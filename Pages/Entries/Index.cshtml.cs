@@ -20,7 +20,7 @@ namespace PersonalJournalApp.Pages.Entries
 
         public void OnGet()
         {
-        	entries = _journalEntryService.entries;
+        	entries = _journalEntryService.GetAllEntries();
         }
     }
 }
