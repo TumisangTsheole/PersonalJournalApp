@@ -1,4 +1,137 @@
 ﻿@page
-@model MyApp.Namespace.CreateModel
+@model PersonalJournalApp.Pages.Entries.CreateModel
 @{
 }
+
+<h1>Create Entry</h1>
+<hr>
+<br>
+
+<form method="post">
+		
+	<div class="input-group mb-3">
+	  <span class="input-group-text">Id</span>
+	  <div class="form-floating">
+	    <input asp-for="entry.Id" type="text" class="form-control" id="Id" placeholder="Id">
+	    <label asp-for="entry.Id">Id</label>
+	  </div>
+	</div>
+
+	<div class="input-group mb-3">
+		  <span class="input-group-text">Title</span>
+		  <div class="form-floating">
+		    <input asp-for="entry.Title" type="text" class="form-control" id="title" placeholder="Title">
+		    <label asp-for="entry.Title">Title</label>
+		  </div>
+	</div>
+
+	<!--Content-->
+
+	<div class="form-floating mb-3">
+		<span class="input-group-text">Journal Content</span>
+		  <textarea asp-for="entry.Content" class="form-control" placeholder="Journal Content" id="content" style="height: 100px"></textarea>
+		  
+	</div>
+	
+	<div class="input-group tag-container mb-3" id="tagContainer" onclick="renderTags()">
+	<span class="input-group-text">Mood</span>
+	    <input type text="text" id="tagInput" placeholder="Type your mood and hit enter..." />
+		
+	</div>
+	
+	<input asp-for="moodTags" type="hidden" name="Tags" id="hiddenTags" />
+
+	<div class="form-check">
+	  <input type="checkbox" asp-for="entry.IsFavorite" class="form-check-input">
+	  <label asp-for="entry.IsFavorite" class="form-check-label">
+	  </label>
+	</div>
+
+	<button type="submit" class="btn btn-secondary" style="float: right;">Submit</button>
+	
+</form>
+
+
+
+<!-- Styling for the mood text input-->
+
+<style>
+	body {
+		padding-bottom: 100px;
+	}
+	.tag-container {
+	    border: 1px solid #ccc;
+	    padding: 5px;
+	    border-radius: 4px;
+	    display: flex;
+	    flex-wrap: wrap;
+	    gap: 5px;
+	    background: white;
+	}
+
+	.tag-container input {
+	    border: none;
+	    outline: none;
+	    flex-grow: 1;
+	    padding: 5px;
+	}
+
+	.tag {
+	    background-color: #007bff;
+	    color: white;
+	    padding: 3px 10px;
+	    border-radius: 20px;
+	    display: flex;
+	    align-items: center;
+	    font-size: 14px;
+	}
+
+	.tag .remove-tag {
+	    margin-left: 8px;
+	    cursor: pointer;
+	    font-weight: bold;
+	}
+</style>
+
+<!-- Script For Mood Input Field-->
+<script>
+	const tagContainer = document.getElementById('tagContainer');
+	const tagInput = document.getElementById('tagInput');
+	const hiddenTags = document.getElementById('hiddenTags');
+	let tags = ['happy'];
+	
+	tagInput.addEventListener('keydown', (e) => {
+	    if (e.key === 'Enter') {
+	        e.preventDefault();
+	        const tagValue = tagInput.value.trim();
+
+	        // Check if not empty and prevent duplicates
+	        if (tagValue && !tags.includes(tagValue)) {
+	            tags.push(tagValue);
+	            renderTags();
+	            tagInput.value = '';
+	        }
+	    }
+	});
+	
+	function renderTags() {
+	    // Remove old tags
+	    document.querySelectorAll('.tag').forEach(t => t.remove());
+	    
+	    // Add new tags
+	    tags.forEach((tag, index) => {
+	        const tagEl = document.createElement('div');
+	        tagEl.classList.add('tag');
+	        tagEl.innerHTML = `${tag} <span class="remove-tag" onclick="removeTag(${index})">&times;</span>`;
+	        tagContainer.insertBefore(tagEl, tagInput);
+	    });
+	    
+	    // Update hidden input for C# postback (comma-separated)
+	    hiddenTags.value = tags.join(',');
+	}
+	
+	function removeTag(index) {
+	    tags.splice(index, 1);
+	    renderTags();
+	}
+</script>

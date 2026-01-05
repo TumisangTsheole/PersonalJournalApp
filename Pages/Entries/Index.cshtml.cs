@@ -7,9 +7,9 @@ namespace PersonalJournalApp.Pages.Entries
 {
     public class IndexModel : PageModel
     {
-    	// Properties to be displayed on page
+    	// Properties to be sent to the page
     	private readonly JournalEntryService _journalEntryService;	
-		public JournalEntry entries { get; set; }
+		public List<JournalEntry> entries { get; set; }
 
 
     	// Constructor Injection

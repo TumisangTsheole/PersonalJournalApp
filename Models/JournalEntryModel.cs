@@ -8,6 +8,6 @@ namespace PersonalJournalApp.Models
 		public DateOnly? Date { get; set; }
 		public string? Mood { get; set; }
 		public List<string>? Tags { get; set; }
-		public bool? IsFavorite { get; set; }
+		public required bool IsFavorite { get; set; }
 	}
 }
