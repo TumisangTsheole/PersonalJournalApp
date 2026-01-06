@@ -13,6 +13,16 @@ namespace PersonalJournalApp.Data
 				Mood = "happy",
 				Tags = new List<string>{"coding", "dotnet"},
 				IsFavorite = true
+			},
+
+			new JournalEntry{
+				Id = 1,
+				Title = "hello world",
+				Content = "This is my new project",
+				Date = new DateOnly(2026,1,1),
+				Mood = "happy",
+				Tags = new List<string>{"coding", "dotnet"},
+				IsFavorite = true
 			}
 		};
 
@@ -21,19 +31,40 @@ namespace PersonalJournalApp.Data
 			return entries;
 		}
 
-		public void AddEntry(JournalEntry entry)
+		public JournalEntry GetEntry(int Id)
 		{
-			entries.Add(entry);	
+			for (int i = 0; i<entries.Count; i++)
+				{
+					if (entries[i].Id == Id)
+					{
+						return entries[i];
+					}
+				}
+			return null;	
+		}
+
+		public void AddEntry(JournalEntry Entry)
+		{
+			entries.Add(Entry);	
 		}
 
 		public void RemoveEntry(int Id)
 		{
-			// TODO
+		
+			for (int i = 0; i<entries.Count; i++)
+			{
+				if (entries[i].Id == Id)
+				{
+					entries.RemoveAt(i);
+					break;
+				}
+			}
 		}
 
-		public void ModifyEntry(int Id)
+		public void ModifyEntry(int Id, JournalEntry Entry)
 		{
-			// TODO
+			RemoveEntry(Id);
+			AddEntry(Entry);
 		}
 
 		

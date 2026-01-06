@@ -30,7 +30,7 @@
 	    <tr>
 			<td>
 				<a asp-page="/Privacy" type="button" class="btn btn-secondary">Details</a>
-				<a type="button" class="btn btn-info">Edit</a>
+				<a asp-page="/Entries/Modify" asp-route-Id="@entry.Id"  type="button" class="btn btn-info">Edit</a>
 				<a asp-page="/Entries/Delete" asp-route-RemoveId="@entry.Id" class="btn btn-danger">Delete</a>
 				
 			</td>

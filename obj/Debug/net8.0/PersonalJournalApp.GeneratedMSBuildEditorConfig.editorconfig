@@ -24,8 +24,16 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Blaze Universe/Desktop/dev/dotnetprac/PersonalJournalApp/Pages/Entries/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cmllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Blaze Universe/Desktop/dev/dotnetprac/PersonalJournalApp/Pages/Entries/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Blaze Universe/Desktop/dev/dotnetprac/PersonalJournalApp/Pages/Entries/Modify.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cmllc1xNb2RpZnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Blaze Universe/Desktop/dev/dotnetprac/PersonalJournalApp/Pages/Error.cshtml]
