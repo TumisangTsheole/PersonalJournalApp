@@ -1,0 +1,55 @@
+﻿@page
+@model  PersonalJournalApp.Pages.Entries.ViewModel
+@{
+}
+
+
+<h1>View Entry </h1>
+<hr>
+<br>
+
+<form>
+		
+	<div class="input-group mb-3">
+	  <span class="input-group-text">Id</span>
+	  <div class="form-floating">
+	    <input asp-for="entry.Id" type="text" class="form-control" id="Id" placeholder="@Model.entry.Id" disabled>
+	    <label asp-for="entry.Id">Id</label>
+	  </div>
+	</div>
+
+	<div class="input-group mb-3">
+		  <span class="input-group-text">Title</span>
+		  <div class="form-floating">
+		    <input asp-for="entry.Title" type="text" class="form-control" id="title" placeholder="@Model.entry.Title" disabled>
+		    <label asp-for="entry.Title">Title</label>
+		  </div>
+	</div>
+
+	<!--Content-->
+
+	<div class="form-floating mb-3">
+		<span class="input-group-text">Journal Content</span>
+		  <textarea asp-for="entry.Content" class="form-control" placeholder="@Model.entry.Content" id="content" style="height: 100px" disabled></textarea>
+		  
+	</div>
+	
+	<div class="input-group tag-container mb-3" id="tagContainer" onclick="renderTags()">
+	<span class="input-group-text">Mood</span>
+	    <input type text="text" id="tagInput" placeholder="" disabled />
+		
+	</div>
+	
+	<input type="hidden" name="Tags" id="hiddenTags" />
+
+	<div class="form-check">
+	  <input type="checkbox" asp-for="entry.IsFavorite" class="form-check-input" disabled>
+	  <label asp-for="entry.IsFavorite" class="form-check-label">
+	  </label>
+	</div>
+
+	<!-- Submit and Back Buttons-->
+	<div class="d-flex flex-row-reverse">
+		<a asp-page="/Entries/Index" class="me-2 btn btn-secondary btn-lg btn-block">Back</a>
+	</div>
+</form>
