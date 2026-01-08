@@ -1,0 +1,7 @@
+C:\Users\Blaze Universe\Desktop\dev\dotnetprac\PersonalJournalApp\publish\PersonalJournalApp.exe
+C:\Users\Blaze Universe\Desktop\dev\dotnetprac\PersonalJournalApp\publish\appsettings.Development.json
+C:\Users\Blaze Universe\Desktop\dev\dotnetprac\PersonalJournalApp\publish\appsettings.json
+C:\Users\Blaze Universe\Desktop\dev\dotnetprac\PersonalJournalApp\publish\PersonalJournalApp.dll
+C:\Users\Blaze Universe\Desktop\dev\dotnetprac\PersonalJournalApp\publish\PersonalJournalApp.deps.json
+C:\Users\Blaze Universe\Desktop\dev\dotnetprac\PersonalJournalApp\publish\PersonalJournalApp.runtimeconfig.json
+C:\Users\Blaze Universe\Desktop\dev\dotnetprac\PersonalJournalApp\publish\PersonalJournalApp.pdb

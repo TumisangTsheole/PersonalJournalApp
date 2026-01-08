@@ -1,0 +1,11 @@
+Personal Journal (Razor Pages)
+
+What you'll build: A personal journal where users can write journal entries
+
+Features To Implement:
+- Home page showing recent entries
+- Create New Journal Entry
+- View Single Entry
+- Edit Entry
+- Delete Entry
+- List All Entries
